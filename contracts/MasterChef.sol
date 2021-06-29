@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity 0.6.12;
 
 import '@pancakeswap/pancake-swap-lib/contracts/math/SafeMath.sol';
@@ -5,8 +6,8 @@ import '@pancakeswap/pancake-swap-lib/contracts/token/BEP20/IBEP20.sol';
 import '@pancakeswap/pancake-swap-lib/contracts/token/BEP20/SafeBEP20.sol';
 import '@pancakeswap/pancake-swap-lib/contracts/access/Ownable.sol';
 
-import "./CakeToken.sol";
-import "./SyrupBar.sol";
+import "./SokuCakeToken.sol";
+import "./SokuSyrupBar.sol";
 
 // import "@nomiclabs/buidler/console.sol";
 
@@ -60,9 +61,9 @@ contract MasterChef is Ownable {
     }
 
     // The CAKE TOKEN!
-    CakeToken public cake;
+    SokuCakeToken public cake;
     // The SYRUP TOKEN!
-    SyrupBar public syrup;
+    SokuSyrupBar public syrup;
     // Dev address.
     address public devaddr;
     // CAKE tokens created per block.
@@ -86,8 +87,8 @@ contract MasterChef is Ownable {
     event EmergencyWithdraw(address indexed user, uint256 indexed pid, uint256 amount);
 
     constructor(
-        CakeToken _cake,
-        SyrupBar _syrup,
+        SokuCakeToken _cake,
+        SokuSyrupBar _syrup,
         address _devaddr,
         uint256 _cakePerBlock,
         uint256 _startBlock
